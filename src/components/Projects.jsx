@@ -16,7 +16,7 @@ const projects = [
     desc: 'My personal portfolio built with React and Tailwind CSS.',
     tech: ['React', 'Tailwind CSS'],
     github: 'https://github.com/saurabhxjha/portfolio',
-    live: 'https://saurabhjha.com',
+    live: 'https://saurabhxjha.xyz',
   },
   {
     title: 'TaskNest',
