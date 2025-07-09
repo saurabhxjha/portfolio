@@ -6,20 +6,46 @@ import Services from './components/Services';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { Particles } from "@tsparticles/react";
 
 function App() {
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
-      {/* Global Animated Gradient + Blobs Background */}
-      <div className="fixed inset-0 -z-30 bg-gradient-to-br from-blue-900 via-purple-800 to-pink-700 bg-[length:200%_200%] animate-gradient" />
-      <div className="fixed inset-0 -z-20 pointer-events-none">
-        <div className="absolute top-[-12rem] left-[-12rem] w-[40rem] h-[40rem] bg-purple-500/60 rounded-full blur-[120px] animate-blob1" />
-        <div className="absolute top-[-10rem] right-[-10rem] w-[36rem] h-[36rem] bg-pink-500/50 rounded-full blur-[100px] animate-blob2" />
-        <div className="absolute bottom-[-14rem] left-[-8rem] w-[44rem] h-[44rem] bg-blue-400/50 rounded-full blur-[120px] animate-blob3" />
-        <div className="absolute bottom-[-12rem] right-[-14rem] w-[40rem] h-[40rem] bg-yellow-300/40 rounded-full blur-[100px] animate-blob4" />
-      </div>
+      {/* Particles Background (kept for future use, but not visible due to z-index) */}
+      <Particles
+        id="tsparticles"
+        className="fixed inset-0 z-0 w-full h-full pointer-events-none"
+        options={{
+          background: { color: "#000" },
+          fullScreen: false,
+          particles: {
+            number: { value: 60, density: { enable: true, area: 900 } },
+            color: { value: "#fff" },
+            opacity: { value: 0.7 },
+            size: { value: 2.5, random: { enable: true, minimumValue: 1.2 } },
+            move: {
+              enable: true,
+              speed: 0.3,
+              direction: "none",
+              random: false,
+              straight: false,
+              outModes: { default: "out" },
+            },
+            links: { enable: false },
+          },
+          detectRetina: true,
+        }}
+      />
+      {/* Glow Effect: Top-Left */}
+      <div className="fixed left-[-8vw] top-[-8vh] w-[28rem] h-[28rem] bg-blue-500/30 rounded-full blur-[120px] z-0 pointer-events-none" />
+      {/* Glow Effect: Bottom-Right */}
+      <div className="fixed right-[-10vw] bottom-[-10vh] w-[36rem] h-[20rem] bg-purple-600/25 rounded-full blur-[100px] z-0 pointer-events-none" />
+      {/* Modern Dark Theme Background */}
+      <div className="fixed inset-0 z-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0a0a23]" />
+      {/* Subtle Animated Blurred Blob */}
+      <div className="fixed left-[20vw] top-[30vh] w-[32rem] h-[32rem] bg-blue-700/40 rounded-full blur-[120px] animate-blob1 z-0 pointer-events-none" />
       {/* High-quality animated SVG tech assets */}
-      <div className="fixed inset-0 -z-10 pointer-events-none w-full h-full">
+      <div className="fixed inset-0 z-0 pointer-events-none w-full h-full">
         {/* Animated circuit lines */}
         <svg width="100%" height="100%" viewBox="0 0 1920 1080" fill="none" className="absolute left-0 top-0 w-full h-full opacity-10 blur-[1.5px]">
           <g className="animate-float-slow">
@@ -52,10 +78,15 @@ function App() {
           <rect width="1920" height="1080" fill="url(#dots2)" />
         </svg>
       </div>
+      {/* Subtle Animated Floating Circle Background */}
+      <svg className="fixed left-[60vw] top-[60vh] w-40 h-40 opacity-25 blur-[2px] animate-float-slow z-0 pointer-events-none" viewBox="0 0 160 160" fill="none">
+        <circle cx="80" cy="80" r="70" fill="#fff" fillOpacity="0.08" />
+        <circle cx="80" cy="80" r="50" fill="#38bdf8" fillOpacity="0.10" />
+      </svg>
       <div className="relative z-10 bg-black/70 dark:bg-black/80 min-h-screen w-full text-white transition-colors duration-300">
         <Navbar />
         {/* Animated Tech Background Assets */}
-        <div className="fixed inset-0 -z-50 pointer-events-none">
+        <div className="fixed inset-0 z-0 pointer-events-none">
           {/* SVG Grid Pattern */}
           <svg width="100%" height="100%" viewBox="0 0 1920 1080" fill="none" className="absolute w-full h-full opacity-20">
             <defs>
