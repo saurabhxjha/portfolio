@@ -6,7 +6,7 @@ This website showcases my projects, skills, experience, and design abilities—a
 
 🚀 Live Demo
 
-🔗 (saurabhxjha.xyz)
+🔗 (www.saurabhxjha.xyz)
 
 📌 Features
 
